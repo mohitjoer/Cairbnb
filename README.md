@@ -1,113 +1,128 @@
 # Cairbnb – An Airbnb Clone
 
-Cairbnb is a web application inspired by Airbnb, designed to allow users to list, discover, and book accommodations. Built using Node.js, Express, and MongoDB, Cairbnb offers a platform for property owners to showcase their spaces and for travelers to find unique places to stay.
+**Cairbnb** is a full-featured web application inspired by Airbnb. It allows users to **list**, **search**, and **book** accommodations. Whether you're a traveler or a host, Cairbnb offers a seamless platform built with **Node.js**, **Express**, and **MongoDB**.
 
-## Features
+🔗 **Live Website:** [https://cairbnb-project.onrender.com/listings](https://cairbnb-project.onrender.com/listings)
 
-- **Property Listings:** Browse a variety of listings with details, images, and pricing.
-- **User Authentication:** Secure user registration and login.
-- **Booking System:** Reserve accommodations for specific dates.
-- **Review and Ratings:** Allow users to leave reviews and ratings for properties.
-- **Search and Filters:** Find properties based on location, price, and amenities.
-- **Responsive Design:** Built with Bootstrap for a seamless experience on all devices.
+---
 
-## Tech Stack
+## 🚀 Features
 
-- **Backend:**
-  - Node.js
-  - Express
-  - MongoDB
-  - Mongoose
-  - Passport (for authentication)
-- **Frontend:**
-  - EJS (Templating)
-  - Bootstrap
-  - CSS
+- 🏠 **Property Listings:** Add and browse detailed listings with images and prices.
+- 👤 **User Authentication:** Register and log in securely using Passport.js.
+- 📅 **Booking System:** Reserve listings for specific dates.
+- ✍️ **Reviews & Ratings:** Users can leave feedback for listings.
+- 🔎 **Search & Filters:** Easily find places by price, location, and more.
+- 📱 **Responsive Design:** Looks great on mobile, tablet, and desktop.
 
-## Installation
+---
 
-1. **Clone the repository:**
+## 🛠 Tech Stack
+
+### Backend
+- **Node.js** – Runtime environment
+- **Express.js** – Server framework
+- **MongoDB** & **Mongoose** – Database and ODM
+- **Passport.js** – Authentication
+
+### Frontend
+- **EJS** – Templating engine
+- **Bootstrap** – Responsive UI framework
+- **Custom CSS** – Styling
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/cairbnb.git
-   cd cairbnb
+   git clone https://github.com/mohitjoer/Cairbnb.git
+   cd Cairbnb
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-3. **Configure MongoDB:**
+3. **Configure environment variables**
 
-   - Ensure MongoDB is installed and running.
-   - Update the connection string in `config/database.js` (or similar) to point to your MongoDB instance.
+   Create a `.env` file in the root:
 
-4. **Set up environment variables:**
+   ```env
+   SESSION_SECRET=your-secret-key
+   MONGODB_URI=mongodb://localhost:27017/cairbnb
+   ```
 
-   - Create a `.env` file in the root directory.
-   - Add the following variables:
+4. **Run MongoDB locally** or use a MongoDB cloud provider like Atlas.
 
-     ```
-     SESSION_SECRET=your-secret-key
-     MONGODB_URI=mongodb://localhost:27017/cairbnb
-     ```
-
-5. **Run the application:**
+5. **Start the server**
 
    ```bash
    npm start
    ```
 
-6. **Access the Application:**
+6. **View the app**
 
-   Open your browser and visit [http://localhost:3000](http://localhost:3000) to see Cairbnb in action.
+   Visit [http://localhost:3000](http://localhost:3000)
 
-## Project Structure
+---
+
+## 📁 Project Structure
 
 ```
-cairbnb/
-├── app.js                   # Main Express application file
-├── models/
-│   ├── listing.js           # Mongoose schema and model for property listings
-│   └── review.js            # Mongoose schema and model for reviews
-│   └── user.js              # Mongoose schema and model for users
-├── routes/
-│   ├── listing.js           # Routes for property listings
-│   ├── review.js            # Routes for reviews
-│   └── user.js              # Routes for user authentication
-├── views/
-│   ├── layouts/             # Layout templates
-│   │   └── boilerplate.ejs  # Main layout file
-│   ├── includes/            # Include templates
-│   │   ├── navbar.ejs       # Navbar file
-│   │   ├── footer.ejs       # Footer file
-│   │   └── flash.ejs        # Flash file
-│   ├── listings/            # Listing-related views
-│   │   ├── listing.ejs      # Display all listings
-│   │   ├── show.ejs         # Show a single listing
-│   │   ├── new.ejs          # Create a new listing
-│   │   ├── edit.ejs         # Edit an existing listing
-│   │   └── error.ejs        # Error page
-│   └── users/               # User-related views
-│       ├── signup.ejs       # Registration form
-│       └── login.ejs        # Login form
-├── public/                  # Static assets (CSS, JavaScript, images)
-│   ├── css/
-│   │   └── style.css        # Main stylesheet
-│   ├── js/
-│   │   └── script.js        # Main JavaScript file
-├── utils/                   # Utility functions
-│   └── middleware.js        # Custom middleware functions
-├── .env                     # Environment variables
-└── README.md                # This file
+Cairbnb/
+├── app.js                  # Main Express app
+├── cloudconfig.js          # Cloudinary setup
+├── controllers/            # Request handlers
+├── init/                   # Initial setup (e.g., DB seeding)
+├── middleware.js           # Custom middleware
+├── models/                 # Mongoose models (Listing, User, Review)
+├── public/                 # Static files (CSS, JS, Images)
+├── routes/                 # Route files
+├── schema.js               # Joi schemas for validation
+├── utils/                  # Utility functions
+├── views/                  # EJS templates
+│   ├── listings/
+│   ├── users/
+│   ├── partials/
+│   └── ...
+├── package.json            # Project metadata
+└── README.md               # Project documentation
 ```
 
-## Contributing
+> 🛑 **Note:** Files ignored by `.gitignore` (like `node_modules`, `.env`, etc.) are excluded from the structure.
 
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+---
 
-## License
+## 🤝 Contributing
 
-[Choose a license - e.g., MIT]
+We welcome contributions! To contribute:
+
+1. Fork the repository.
+2. Create your branch:
+
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+
+3. Commit your changes and push:
+
+   ```bash
+   git commit -m "Add: your feature"
+   git push origin feature/YourFeature
+   ```
+
+4. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is open-source. License details coming soon.
+
+---
+
+### 👨‍💻 Made by [Mohit Joe .R](https://github.com/mohitjoer)
